@@ -5,6 +5,7 @@ namespace Calendar
 {
     public partial class UserControlDays : UserControl
     {
+        public bool IsCurrentDay { get; set; }
         public UserControlDays()
         {
             InitializeComponent();

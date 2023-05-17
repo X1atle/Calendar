@@ -42,6 +42,11 @@ namespace Calendar
             {
                 UserControlDays ucdays = new UserControlDays();
                 ucdays.days(i);
+                if (i == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
+                {
+                    ucdays.IsCurrentDay = true;
+                    ucdays.BorderStyle = BorderStyle.FixedSingle;
+                }
                 daysContainer.Controls.Add(ucdays);
             }
         }
@@ -73,6 +78,12 @@ namespace Calendar
             {
                 UserControlDays ucdays = new UserControlDays();
                 ucdays.days(i);
+                if (i == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
+                {
+                    ucdays.IsCurrentDay = true;
+                    ucdays.BorderStyle = BorderStyle.FixedSingle;
+                }
+                ucdays.days(i);
                 daysContainer.Controls.Add(ucdays);
             }
         }
@@ -103,11 +114,14 @@ namespace Calendar
             {
                 UserControlDays ucdays = new UserControlDays();
                 ucdays.days(i);
+                if (i == DateTime.Now.Day && month == DateTime.Now.Month && year == DateTime.Now.Year)
+                {
+                    ucdays.IsCurrentDay = true;
+                    ucdays.BorderStyle = BorderStyle.FixedSingle;
+                }
+                ucdays.days(i);
                 daysContainer.Controls.Add(ucdays);
             }
         }
-
-
-       
     }
 }
