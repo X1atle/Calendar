@@ -23,11 +23,11 @@ namespace Calendar
             //got count of days of the month
             int days = DateTime.DaysInMonth(now.Year, now.Month);
             int dayOfTheWeek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"))+ 1;
+            //display
             for (int i = 1; i < dayOfTheWeek; i++)
             {
                 UserControlBlank ucblank = new UserControlBlank();
                 daysContainer.Controls.Add(ucblank);
-
             }
         }
 
