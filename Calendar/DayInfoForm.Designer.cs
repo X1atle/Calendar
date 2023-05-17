@@ -61,6 +61,8 @@ namespace Calendar
             this.ClientSize = new System.Drawing.Size(474, 518);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txDate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "DayInfoForm";
             this.Text = "DayInfoForm";
             this.Load += new System.EventHandler(this.DayInfoForm_Load);

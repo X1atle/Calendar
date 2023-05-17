@@ -179,7 +179,9 @@
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.btPrevious);
             this.Controls.Add(this.daysContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(15, 15);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
