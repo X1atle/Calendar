@@ -36,6 +36,7 @@ namespace Calendar
             // 
             // lbdays
             // 
+            this.lbdays.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lbdays.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdays.Location = new System.Drawing.Point(0, 0);
             this.lbdays.Name = "lbdays";
@@ -43,6 +44,7 @@ namespace Calendar
             this.lbdays.TabIndex = 0;
             this.lbdays.Text = "00";
             this.lbdays.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbdays.Click += new System.EventHandler(this.lbdays_Click);
             // 
             // UserControlDays
             // 

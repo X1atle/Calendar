@@ -20,5 +20,10 @@ namespace Calendar
         {
             lbdays.Text = numday + "";
         }
+
+        private void lbdays_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

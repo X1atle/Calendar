@@ -82,11 +82,11 @@ namespace Calendar
             //clean container
             daysContainer.Controls.Clear();
             month--;
-            if (month < 1)
-            {
-                month = 12;
-                year--;
-            }
+             if (month < 1)
+             { 
+                 month = 12; 
+                 year--;
+              }
             lbdate.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             //got count of days of the month
@@ -106,5 +106,8 @@ namespace Calendar
                 daysContainer.Controls.Add(ucdays);
             }
         }
+
+
+       
     }
 }
