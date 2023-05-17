@@ -37,9 +37,9 @@ namespace Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.Name = "UserControlBlank";
             this.Size = new System.Drawing.Size(126, 64);
-            this.Load += new System.EventHandler(this.UserControlBlank_Load);
             this.ResumeLayout(false);
         }
 

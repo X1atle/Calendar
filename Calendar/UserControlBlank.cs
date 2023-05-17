@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Calendar
 {
@@ -8,11 +7,7 @@ namespace Calendar
         public UserControlBlank()
         {
             InitializeComponent();
-        }
-
-        private void UserControlBlank_Load(object sender, EventArgs e)
-        {
-           
+          
         }
     }
 }
