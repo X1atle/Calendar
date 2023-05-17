@@ -7,6 +7,8 @@ namespace Calendar
     public partial class MainForm : Form
     {
         private int month, year;
+        //static day, month and year
+        public static int static_month, static_year;
         public MainForm()
         {
             InitializeComponent();
@@ -23,7 +25,10 @@ namespace Calendar
         {
             DateTime now = DateTime.Now;
             month = now.Month;
-            year = now.Year; 
+            year = now.Year;
+
+            static_month = month;
+            static_year = year;
             
             lbdate.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
             
@@ -64,6 +69,8 @@ namespace Calendar
                 month = 1;
                 year++;
             }
+            static_month = month;
+            static_year = year;
             lbdate.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             //got count of days of the month
@@ -100,6 +107,8 @@ namespace Calendar
                  month = 12; 
                  year--;
               }
+             static_month = month;
+             static_year = year;
             lbdate.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             //got count of days of the month

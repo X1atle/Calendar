@@ -31,16 +31,27 @@ namespace Calendar
         /// </summary>
         private void InitializeComponent()
         {
+            this.txDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // txDate
+            // 
+            this.txDate.Enabled = false;
+            this.txDate.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txDate.Location = new System.Drawing.Point(37, 63);
+            this.txDate.Name = "txDate";
+            this.txDate.Size = new System.Drawing.Size(172, 27);
+            this.txDate.TabIndex = 0;
+            // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Temp Text";
+            this.label1.Size = new System.Drawing.Size(172, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Date";
             // 
             // DayInfoForm
             // 
@@ -49,12 +60,17 @@ namespace Calendar
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(474, 518);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txDate);
             this.Name = "DayInfoForm";
             this.Text = "DayInfoForm";
+            this.Load += new System.EventHandler(this.DayInfoForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.TextBox txDate;
 
         #endregion
     }

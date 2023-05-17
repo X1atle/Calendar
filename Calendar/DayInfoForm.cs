@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Calendar
 {
@@ -7,6 +8,11 @@ namespace Calendar
         public DayInfoForm()
         {
             InitializeComponent();
+        }
+
+        private void DayInfoForm_Load(object sender, EventArgs e)
+        {
+            txDate.Text = MainForm.static_month + "/" + UserControlDays.static_day + "/" + MainForm.static_year;
         }
     }
 }
