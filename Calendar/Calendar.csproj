@@ -60,6 +60,12 @@
         <Compile Include="UserControlBlank.Designer.cs">
           <DependentUpon>UserControlBlank.cs</DependentUpon>
         </Compile>
+        <Compile Include="UserControlDays.cs">
+          <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UserControlDays.Designer.cs">
+          <DependentUpon>UserControlDays.cs</DependentUpon>
+        </Compile>
         <EmbeddedResource Include="MainForm.resx">
           <DependentUpon>MainForm.cs</DependentUpon>
         </EmbeddedResource>
@@ -74,6 +80,9 @@
         </Compile>
         <EmbeddedResource Include="UserControlBlank.resx">
           <DependentUpon>UserControlBlank.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UserControlDays.resx">
+          <DependentUpon>UserControlDays.cs</DependentUpon>
         </EmbeddedResource>
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>

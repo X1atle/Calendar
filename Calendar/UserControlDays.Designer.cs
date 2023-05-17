@@ -2,7 +2,7 @@
 
 namespace Calendar
 {
-    partial class UserControlBlank
+    partial class UserControlDays
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,17 +31,31 @@ namespace Calendar
         /// </summary>
         private void InitializeComponent()
         {
+            this.lbdays = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // UserControlBlank
+            // lbdays
+            // 
+            this.lbdays.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdays.Location = new System.Drawing.Point(0, 0);
+            this.lbdays.Name = "lbdays";
+            this.lbdays.Size = new System.Drawing.Size(126, 64);
+            this.lbdays.TabIndex = 0;
+            this.lbdays.Text = "00";
+            this.lbdays.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UserControlDays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Name = "UserControlBlank";
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.lbdays);
+            this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(126, 64);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label lbdays;
 
         #endregion
     }

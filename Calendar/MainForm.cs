@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Calendar
 {
     public partial class MainForm : Form
     {
+        private int month, year;
         public MainForm()
         {
             InitializeComponent();
@@ -18,19 +20,91 @@ namespace Calendar
         private void displayDays()
         {
             DateTime now = DateTime.Now;
+            month = now.Month;
+            year = now.Year; 
+            
+            lbdate.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
+            
+           
             //frst day of the month
-            DateTime startOfTheMonth = new DateTime(now.Year, now.Month, 1);
+            DateTime startOfTheMonth = new DateTime(year, month, 1);
             //got count of days of the month
-            int days = DateTime.DaysInMonth(now.Year, now.Month);
-            int dayOfTheWeek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"))+ 1;
+            int days = DateTime.DaysInMonth(year, month);
+            int dayOfTheWeek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"));
             //display
             for (int i = 1; i < dayOfTheWeek; i++)
             {
                 UserControlBlank ucblank = new UserControlBlank();
                 daysContainer.Controls.Add(ucblank);
             }
+
+            for (int i = 1; i <= days; i++)
+            {
+                UserControlDays ucdays = new UserControlDays();
+                ucdays.days(i);
+                daysContainer.Controls.Add(ucdays);
+            }
         }
 
-        
+
+        private void btNext_Click(object sender, EventArgs e)
+        {
+            //clean container
+            daysContainer.Controls.Clear();
+            month++;
+            if (month > 12)
+            {
+                month = 1;
+                year++;
+            }
+            lbdate.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
+            DateTime startOfTheMonth = new DateTime(year, month, 1);
+            //got count of days of the month
+            int days = DateTime.DaysInMonth(year, month);
+            int dayOfTheWeek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"));
+            //display
+            for (int i = 1; i < dayOfTheWeek; i++)
+            {
+                UserControlBlank ucblank = new UserControlBlank();
+                daysContainer.Controls.Add(ucblank);
+            }
+
+            for (int i = 1; i <= days; i++)
+            {
+                UserControlDays ucdays = new UserControlDays();
+                ucdays.days(i);
+                daysContainer.Controls.Add(ucdays);
+            }
+        }
+
+        private void btPrevious_Click(object sender, EventArgs e)
+        {
+            //clean container
+            daysContainer.Controls.Clear();
+            month--;
+            if (month < 1)
+            {
+                month = 12;
+                year--;
+            }
+            lbdate.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
+            DateTime startOfTheMonth = new DateTime(year, month, 1);
+            //got count of days of the month
+            int days = DateTime.DaysInMonth(year, month);
+            int dayOfTheWeek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d"));
+            //display
+            for (int i = 1; i < dayOfTheWeek; i++)
+            {
+                UserControlBlank ucblank = new UserControlBlank();
+                daysContainer.Controls.Add(ucblank);
+            }
+
+            for (int i = 1; i <= days; i++)
+            {
+                UserControlDays ucdays = new UserControlDays();
+                ucdays.days(i);
+                daysContainer.Controls.Add(ucdays);
+            }
+        }
     }
 }

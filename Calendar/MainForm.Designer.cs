@@ -39,38 +39,41 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lbdate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // daysContainer
             // 
             this.daysContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.daysContainer.Location = new System.Drawing.Point(7, 60);
+            this.daysContainer.Location = new System.Drawing.Point(10, 129);
             this.daysContainer.Name = "daysContainer";
             this.daysContainer.Size = new System.Drawing.Size(950, 497);
             this.daysContainer.TabIndex = 0;
             // 
             // btPrevious
             // 
-            this.btPrevious.Location = new System.Drawing.Point(682, 563);
+            this.btPrevious.Location = new System.Drawing.Point(685, 632);
             this.btPrevious.Name = "btPrevious";
             this.btPrevious.Size = new System.Drawing.Size(129, 38);
             this.btPrevious.TabIndex = 1;
             this.btPrevious.Text = "Previous";
             this.btPrevious.UseVisualStyleBackColor = true;
+            this.btPrevious.Click += new System.EventHandler(this.btPrevious_Click);
             // 
             // btNext
             // 
-            this.btNext.Location = new System.Drawing.Point(817, 563);
+            this.btNext.Location = new System.Drawing.Point(820, 632);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(129, 38);
             this.btNext.TabIndex = 2;
             this.btNext.Text = "Next";
             this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 4);
+            this.label1.Location = new System.Drawing.Point(13, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 56);
             this.label1.TabIndex = 3;
@@ -80,7 +83,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(142, 4);
+            this.label2.Location = new System.Drawing.Point(145, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 53);
             this.label2.TabIndex = 4;
@@ -90,7 +93,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(412, 4);
+            this.label3.Location = new System.Drawing.Point(415, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 53);
             this.label3.TabIndex = 6;
@@ -100,7 +103,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(277, 4);
+            this.label4.Location = new System.Drawing.Point(280, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 53);
             this.label4.TabIndex = 5;
@@ -110,7 +113,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(547, 4);
+            this.label5.Location = new System.Drawing.Point(550, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 53);
             this.label5.TabIndex = 9;
@@ -120,7 +123,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(682, 4);
+            this.label6.Location = new System.Drawing.Point(685, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 53);
             this.label6.TabIndex = 8;
@@ -130,18 +133,29 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(817, 4);
+            this.label7.Location = new System.Drawing.Point(820, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(129, 53);
             this.label7.TabIndex = 7;
             this.label7.Text = "Sunday";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbdate
+            // 
+            this.lbdate.Font = new System.Drawing.Font("Leelawadee", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdate.Location = new System.Drawing.Point(280, 9);
+            this.lbdate.Name = "lbdate";
+            this.lbdate.Size = new System.Drawing.Size(399, 53);
+            this.lbdate.TabIndex = 10;
+            this.lbdate.Text = "MONTH DAY";
+            this.lbdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 610);
+            this.ClientSize = new System.Drawing.Size(1058, 722);
+            this.Controls.Add(this.lbdate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
@@ -157,6 +171,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label lbdate;
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
