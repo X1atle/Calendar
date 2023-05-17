@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Calendar
@@ -11,12 +12,6 @@ namespace Calendar
             InitializeComponent();
         }
 
-
-        private void UserControlDays_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         public void days(int numday)
         {
             lbdays.Text = numday + "";
@@ -24,7 +19,9 @@ namespace Calendar
 
         private void lbdays_Click(object sender, EventArgs e)
         {
-            
+            DayInfoForm dayInfoForm = new DayInfoForm();
+            dayInfoForm.Show();
+            dayInfoForm.Text = "Day info";
         }
     }
 }

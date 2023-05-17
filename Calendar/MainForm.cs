@@ -10,11 +10,13 @@ namespace Calendar
         public MainForm()
         {
             InitializeComponent();
+            Text = "Calendar";
         }
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-         displayDays();
+            
+            displayDays();
         }
 
         private void displayDays()
