@@ -33,13 +33,16 @@ namespace Calendar
         {
             this.txDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txDate
             // 
             this.txDate.Enabled = false;
             this.txDate.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txDate.Location = new System.Drawing.Point(37, 63);
+            this.txDate.Location = new System.Drawing.Point(12, 40);
             this.txDate.Name = "txDate";
             this.txDate.Size = new System.Drawing.Size(172, 27);
             this.txDate.TabIndex = 0;
@@ -47,11 +50,39 @@ namespace Calendar
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 37);
+            this.label1.Location = new System.Drawing.Point(12, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Date";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 23);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Note";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(12, 114);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(450, 27);
+            this.textBox1.TabIndex = 2;
+            // 
+            // btSave
+            // 
+            this.btSave.BackColor = System.Drawing.Color.Moccasin;
+            this.btSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSave.Location = new System.Drawing.Point(334, 470);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(128, 36);
+            this.btSave.TabIndex = 4;
+            this.btSave.Text = "Save";
+            this.btSave.UseVisualStyleBackColor = false;
             // 
             // DayInfoForm
             // 
@@ -59,6 +90,9 @@ namespace Calendar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(474, 518);
+            this.Controls.Add(this.btSave);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -69,6 +103,12 @@ namespace Calendar
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btSave;
+
+
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
 
         private System.Windows.Forms.Label label1;
 

@@ -14,5 +14,7 @@ namespace Calendar
         {
             txDate.Text = MainForm.static_month + "/" + UserControlDays.static_day + "/" + MainForm.static_year;
         }
+
+        
     }
 }

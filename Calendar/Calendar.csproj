@@ -46,6 +46,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="DataBaseInfo.cs" />
         <Compile Include="DayInfoForm.cs">
           <SubType>Form</SubType>
         </Compile>
