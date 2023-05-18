@@ -34,7 +34,7 @@ namespace Calendar
             this.txDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txNote = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -65,13 +65,13 @@ namespace Calendar
             this.label2.TabIndex = 3;
             this.label2.Text = "Note";
             // 
-            // textBox1
+            // txNote
             // 
-            this.textBox1.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(450, 27);
-            this.textBox1.TabIndex = 2;
+            this.txNote.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txNote.Location = new System.Drawing.Point(12, 114);
+            this.txNote.Name = "txNote";
+            this.txNote.Size = new System.Drawing.Size(450, 27);
+            this.txNote.TabIndex = 2;
             // 
             // btSave
             // 
@@ -83,6 +83,7 @@ namespace Calendar
             this.btSave.TabIndex = 4;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // DayInfoForm
             // 
@@ -92,7 +93,7 @@ namespace Calendar
             this.ClientSize = new System.Drawing.Size(474, 518);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txNote);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -108,7 +109,7 @@ namespace Calendar
 
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txNote;
 
         private System.Windows.Forms.Label label1;
 
