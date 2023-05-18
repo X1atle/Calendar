@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Windows.Forms;
 using System.Linq;
 
@@ -30,20 +29,20 @@ namespace Calendar
 
         private void UserControlDays_Load(object sender, EventArgs e)
         {
-            // Загружаем базу данных
+            // load db
             var xmlDatabase = new XMLDatabase("database.xml");
             xmlDatabase.Load();
 
-            // Получаем дату для текущего UserControlDays
+            // get date
             int day = int.Parse(lbdays.Text);
             DateTime currentDate = new DateTime(MainForm.static_year, MainForm.static_month, day);
 
-            // Проверяем наличие записи на данную дату в базе данных
+            // check some notes
             bool hasEntry = xmlDatabase.Database.Entries.Any(entry => entry.Date.Date == currentDate.Date);
 
             if (hasEntry)
             {
-                // Добавляем символ "*" к тексту дня
+                // adding "*"
                 label1.Text = "*";
             }
         }
