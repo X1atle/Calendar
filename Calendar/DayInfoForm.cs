@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Linq;
 
 namespace Calendar
 {
@@ -45,6 +46,12 @@ namespace Calendar
                 newEntry.Date = date;
                 newEntry.Note = note;
 
+                // delete if exist
+                var existingEntry = xmlDatabase.Database.Entries.FirstOrDefault(entry => entry.Date == date);
+                if (existingEntry != null)
+                {
+                    xmlDatabase.Database.Entries.Remove(existingEntry);
+                }
                 // creating new note to db
                 xmlDatabase.Database.Entries.Add(newEntry);
 
