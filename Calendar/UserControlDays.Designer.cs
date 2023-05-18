@@ -32,6 +32,7 @@ namespace Calendar
         private void InitializeComponent()
         {
             this.lbdays = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbdays
@@ -46,11 +47,21 @@ namespace Calendar
             this.lbdays.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbdays.Click += new System.EventHandler(this.lbdays_Click);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label1.Font = new System.Drawing.Font("Leelawadee", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 18);
+            this.label1.TabIndex = 1;
+            // 
             // UserControlDays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbdays);
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(126, 64);
@@ -58,6 +69,8 @@ namespace Calendar
             this.Click += new System.EventHandler(this.UserControlDays_Click);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.Label lbdays;
 

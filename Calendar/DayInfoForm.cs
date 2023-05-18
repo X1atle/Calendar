@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Globalization;
 
 namespace Calendar
