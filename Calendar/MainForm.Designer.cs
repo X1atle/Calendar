@@ -40,6 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbdate = new System.Windows.Forms.Label();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // daysContainer
@@ -162,12 +163,25 @@
             this.lbdate.Text = "MONTH DAY";
             this.lbdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Location = new System.Drawing.Point(12, 555);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(129, 38);
+            this.refreshBtn.TabIndex = 11;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(954, 603);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.lbdate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -186,6 +200,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button refreshBtn;
 
         private System.Windows.Forms.Label lbdate;
 

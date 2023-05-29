@@ -36,6 +36,7 @@ namespace Calendar
             this.label2 = new System.Windows.Forms.Label();
             this.txNote = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txDate
@@ -85,12 +86,25 @@ namespace Calendar
             this.btSave.UseVisualStyleBackColor = false;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
+            // clearBtn
+            // 
+            this.clearBtn.BackColor = System.Drawing.Color.Moccasin;
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn.Location = new System.Drawing.Point(12, 470);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(128, 36);
+            this.clearBtn.TabIndex = 5;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // DayInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(474, 518);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txNote);
@@ -104,6 +118,8 @@ namespace Calendar
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button clearBtn;
 
         private System.Windows.Forms.Button btSave;
 

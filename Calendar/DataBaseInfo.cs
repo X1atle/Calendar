@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace Calendar
 {
-    public class XMLDatabase
+    public class JSONDatabase
     {
         private string filePath;
         public Database Database { get; set; }
 
-        public XMLDatabase(string filePath)
+        public JSONDatabase(string filePath)
         {
             this.filePath = filePath;
             Database = new Database();
@@ -20,30 +20,20 @@ namespace Calendar
         {
             if (File.Exists(filePath))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(Database));
-
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    Database = (Database)serializer.Deserialize(reader);
-                }
+                string json = File.ReadAllText(filePath);
+                Database = JsonConvert.DeserializeObject<Database>(json);
             }
         }
 
         public void Save()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Database));
-
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                serializer.Serialize(writer, Database);
-            }
+            string json = JsonConvert.SerializeObject(Database, Formatting.Indented);
+            File.WriteAllText(filePath, json);
         }
     }
 
-    [XmlRoot("CalendarDatabase")]
     public class Database
     {
-        [XmlElement("Entry")]
         public List<DatabaseEntry> Entries { get; set; }
 
         public Database()
@@ -54,10 +44,7 @@ namespace Calendar
 
     public class DatabaseEntry
     {
-        [XmlElement("Date")]
         public DateTime Date { get; set; }
-
-        [XmlElement("Note")]
         public string Note { get; set; }
     }
 }

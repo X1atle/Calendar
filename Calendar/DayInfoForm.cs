@@ -8,8 +8,10 @@ namespace Calendar
     public partial class DayInfoForm : Form
     {
         public DateTime SelectedDate { get; set; }
-        
-        private XMLDatabase xmlDatabase;
+
+        private JSONDatabase _jsonDatabase;
+        private DatabaseEntry _existingEntry;
+
         public DayInfoForm()
         {
             InitializeComponent();
@@ -17,26 +19,27 @@ namespace Calendar
 
         private void DayInfoForm_Load(object sender, EventArgs e)
         {
-            txDate.Text = MainForm.static_month + "/" + UserControlDays.static_day + "/" + MainForm.static_year;
-            xmlDatabase = new XMLDatabase("database.xml");
-            xmlDatabase.Load();
-            SelectedDate = new DateTime(MainForm.static_year, MainForm.static_month, Int32.Parse(UserControlDays.static_day));
-            // load from db
-            DatabaseEntry entry = xmlDatabase.Database.Entries.Find(a => a.Date.Date == SelectedDate.Date);
+            txDate.Text = $"{MainForm.static_month}/{UserControlDays.static_day}/{MainForm.static_year}";
 
-            if (entry != null)
+            _jsonDatabase = new JSONDatabase("database.json");
+            _jsonDatabase.Load();
+
+            SelectedDate = new DateTime(MainForm.static_year, MainForm.static_month, Int32.Parse(UserControlDays.static_day));
+
+            // load from db
+            _existingEntry = _jsonDatabase.Database.Entries.FirstOrDefault(entry => entry.Date.Date == SelectedDate.Date);
+
+            if (_existingEntry != null)
             {
                 // if found put note
-                txNote.Text = entry.Note;
+                txNote.Text = _existingEntry.Note;
             }
-
         }
-
 
         private void btSave_Click(object sender, EventArgs e)
         {
             // get values
-            string dateString = MainForm.static_month + "/" + UserControlDays.static_day + "/" + MainForm.static_year;
+            string dateString = $"{MainForm.static_month}/{UserControlDays.static_day}/{MainForm.static_year}";
             string note = txNote.Text;
 
             // creating new entry
@@ -47,16 +50,16 @@ namespace Calendar
                 newEntry.Note = note;
 
                 // delete if exist
-                var existingEntry = xmlDatabase.Database.Entries.FirstOrDefault(entry => entry.Date == date);
-                if (existingEntry != null)
+                if (_existingEntry != null)
                 {
-                    xmlDatabase.Database.Entries.Remove(existingEntry);
+                    _jsonDatabase.Database.Entries.Remove(_existingEntry);
                 }
+
                 // creating new note to db
-                xmlDatabase.Database.Entries.Add(newEntry);
+                _jsonDatabase.Database.Entries.Add(newEntry);
 
                 // save
-                xmlDatabase.Save();
+                _jsonDatabase.Save();
 
                 // saved
                 MessageBox.Show("Note has been saved.");
@@ -66,5 +69,27 @@ namespace Calendar
                 MessageBox.Show("Date is not correct.");
             }
         }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            // Confirm deletion
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this note?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Delete the existing entry
+                if (_existingEntry != null)
+                {
+                    _jsonDatabase.Database.Entries.Remove(_existingEntry);
+                    _jsonDatabase.Save();
+                    MessageBox.Show("Note has been deleted.");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("No note found to delete.");
+                }
+            }
+        }
+
     }
 }
