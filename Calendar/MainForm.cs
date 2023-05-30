@@ -37,7 +37,7 @@ namespace Calendar
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             //got count of days of the month
             int days = DateTime.DaysInMonth(year, month);
-            int dayOfTheWeek = (int)startOfTheMonth.DayOfWeek;
+            int dayOfTheWeek = (int)startOfTheMonth.DayOfWeek-1;
 
             daysArray = new UserControlDays[days];
 
@@ -81,7 +81,7 @@ namespace Calendar
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             //got count of days of the month
             int days = DateTime.DaysInMonth(year, month);
-            int dayOfTheWeek = (int)startOfTheMonth.DayOfWeek;
+            int dayOfTheWeek = (int)startOfTheMonth.DayOfWeek-1;
 
             daysArray = new UserControlDays[days];
 
@@ -124,7 +124,7 @@ namespace Calendar
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             //got count of days of the month
             int days = DateTime.DaysInMonth(year, month);
-            int dayOfTheWeek = (int)startOfTheMonth.DayOfWeek;
+            int dayOfTheWeek = (int)startOfTheMonth.DayOfWeek-1;
 
             daysArray = new UserControlDays[days];
 
